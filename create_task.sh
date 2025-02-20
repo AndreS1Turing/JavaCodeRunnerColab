@@ -28,9 +28,11 @@ create_task_structure() {
     # Create test file
     touch tasks/$task_id/test/SolutionTest.java
 
-    # make a link for the test runner in the new task folder
-    ln -s ./run_tests.py tasks/$task_id/run_tests.py
+    # download the test runner into the new task folder
+    cd tasks/$task_id/
+    wget https://raw.githubusercontent.com/AndreS1Turing/JavaCodeRunnerColab/refs/heads/main/run_tests.py
     echo "Task structure for $task_id created."
+    echo "You may edit the code files, then run the tests."   
 }
 
 # Check if a task ID is provided, otherwise print usage instructions
