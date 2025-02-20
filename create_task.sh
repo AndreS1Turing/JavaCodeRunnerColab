@@ -30,3 +30,13 @@ create_task_structure() {
 
     # make a link for the test runner in the new task folder
     ln -s ./run_tests.py tasks/$task_id/run_tests.py
+    echo "Task structure for $task_id created."
+}
+
+# Check if a task ID is provided, otherwise print usage instructions
+if [ -z "$1" ]; then
+    echo "Please provide a task ID to create the structure for (e.g., 303990)."
+    exit 1
+else
+    create_task_structure $1
+fi
