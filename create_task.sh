@@ -27,4 +27,6 @@ create_task_structure() {
 
     # Create test file
     touch tasks/$task_id/test/SolutionTest.java
-    
+
+    # make a link for the test runner in the new task folder
+    ln -s ./run_tests.py tasks/$task_id/run_tests.py
